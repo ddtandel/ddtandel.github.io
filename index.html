@@ -3,330 +3,342 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dhananjay Tandel | Academic Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhananjay Tandel | Academic Profile</title>
 
 <style>
 :root {
-  --navy: #203c56;
-  --blue: #416f91;
-  --text: #374656;
-  --muted: #758394;
-  --light: #f6f8fa;
-  --border: #e8edf1;
+    --navy: #17324d;
+    --blue: #315f85;
+    --light: #f5f7fa;
+    --text: #303b46;
+    --muted: #687887;
+    --border: #e2e8ee;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html { scroll-behavior: smooth; }
-
 body {
-  font-family: Arial, sans-serif;
-  color: var(--text);
-  line-height: 1.8;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.7;
 }
 
 .container {
-  max-width: 1000px;
-  width: 90%;
-  margin: auto;
+    max-width: 1100px;
+    margin: 55px auto;
+    padding: 0 25px;
 }
 
-header {
-  border-bottom: 1px solid var(--border);
-  background: white;
-}
-
-nav {
-  min-height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 19px;
-  font-weight: bold;
-  color: var(--navy);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.nav-links a:hover { color: var(--blue); }
-
-.hero {
-  background: var(--light);
-  padding: 85px 0;
-}
+/* Profile header */
 
 .profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 55px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    margin-bottom: 25px;
 }
 
-.profile-info { flex: 1; }
+.profile img {
+    width: 155px;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
-h1 {
-  color: var(--navy);
-  font-size: clamp(36px, 5vw, 50px);
-  line-height: 1.2;
-  margin-bottom: 12px;
+.profile h1 {
+    color: var(--navy);
+    font-size: 32px;
+    margin-bottom: 5px;
 }
 
 .position {
-  color: var(--blue);
-  font-size: 20px;
+    font-size: 17px;
+    color: var(--blue);
+    font-weight: 600;
 }
 
-.affiliation {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.research-line {
-  margin-top: 20px;
-  font-size: 15px;
-}
-
-.profile-photo {
-  width: 210px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 9px;
+.affiliation, .interest {
+    color: var(--muted);
+    margin-top: 5px;
 }
 
 .buttons {
-  display: flex;
-  gap: 12px;
-  margin-top: 25px;
-  flex-wrap: wrap;
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 21px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
+.btn {
+    display: inline-block;
+    padding: 9px 18px;
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-.primary {
-  background: var(--navy);
-  color: white;
+.btn.secondary {
+    background: white;
+    color: var(--navy);
+    border: 1px solid var(--navy);
 }
 
-.secondary {
-  border: 1px solid var(--navy);
-  color: var(--navy);
+.btn:hover {
+    opacity: 0.82;
 }
 
-.button:hover { opacity: 0.8; }
+/* Main two-column layout */
 
-section {
-  padding: 65px 0;
-  border-bottom: 1px solid var(--border);
-  scroll-margin-top: 25px;
+.layout {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 25px;
+    align-items: start;
 }
 
-section:nth-of-type(even) {
-  background: var(--light);
+/* Sidebar tabs */
+
+.sidebar {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 
-h2 {
-  color: var(--navy);
-  font-size: 27px;
-  margin-bottom: 20px;
+.tab {
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 13px 16px;
+    margin: 3px 0;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
 }
 
-.section-content {
-  max-width: 780px;
-  font-size: 15px;
+.tab:hover {
+    background: #edf2f7;
 }
 
-.publication-link {
-  display: inline-block;
-  margin-top: 12px;
-  font-weight: 600;
+.tab.active {
+    background: var(--navy);
+    color: white;
+}
+
+/* Content panel */
+
+.content {
+    background: white;
+    padding: 35px;
+    min-height: 330px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.panel {
+    display: none;
+    animation: fadeIn 0.25s ease;
+}
+
+.panel.active {
+    display: block;
+}
+
+.panel h2 {
+    color: var(--navy);
+    font-size: 24px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.panel p {
+    margin-bottom: 14px;
+}
+
+.panel a {
+    color: var(--blue);
 }
 
 footer {
-  padding: 25px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 30px;
 }
 
-@media(max-width: 650px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 0;
-    gap: 10px;
-  }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-  .nav-links {
-    gap: 17px;
-    flex-wrap: wrap;
-  }
+/* Mobile layout */
 
-  .hero { padding: 55px 0; }
+@media (max-width: 650px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 14px;
+    }
 
-  .profile {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 25px;
-  }
+    .profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 18px;
+    }
 
-  .profile-photo {
-    width: 175px;
-    height: 215px;
-  }
+    .profile img {
+        width: 135px;
+        height: 150px;
+    }
 
-  section { padding: 45px 0; }
+    .buttons {
+        justify-content: center;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .sidebar {
+        display: flex;
+        overflow-x: auto;
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .tab {
+        width: auto;
+        white-space: nowrap;
+        text-align: center;
+        padding: 10px 13px;
+    }
+
+    .content {
+        padding: 23px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
 <div class="container">
-<nav>
-  <a href="#" class="logo">Dhananjay Tandel </a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+
+    <!-- Profile header -->
+    <header class="profile">
+        <img src="profile.jpg.jpg" alt="Dhananjay Tandel">
+
+        <div>
+            <h1>Dhananjay Tandel</h1>
+            <div class="position">Postdoctoral Researcher</div>
+            <div class="affiliation">University of Liège, Belgium</div>
+            <div class="interest">Research interests: Nonlinear Vibrations</div>
+
+            <div class="buttons">
+                <a class="btn" href="Dhananjay_Tandel_CV.pdf"
+                   target="_blank">Curriculum Vitae</a>
+
+                <a class="btn secondary"
+                   href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
+                   target="_blank" rel="noopener">Google Scholar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar and tab content -->
+    <main class="layout">
+
+        <nav class="sidebar" aria-label="Main navigation">
+            <button class="tab active" data-tab="about">About</button>
+            <button class="tab" data-tab="research">Research</button>
+            <button class="tab" data-tab="publications">Publications</button>
+            <button class="tab" data-tab="contact">Contact</button>
+        </nav>
+
+        <section class="content">
+
+            <div class="panel active" id="about">
+                <h2>About</h2>
+                <p>
+                    Welcome to my academic website. I am a researcher
+                    working in the field of nonlinear vibrations and
+                    dynamical systems.
+                </p>
+            </div>
+
+            <div class="panel" id="research">
+                <h2>Research</h2>
+                <p>
+                    My research interests focus on nonlinear vibrations
+                    and nonlinear dynamical systems.
+                </p>
+            </div>
+
+            <div class="panel" id="publications">
+                <h2>Publications</h2>
+                <p>
+                    For my complete list of publications, please visit
+                    my <a href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
+                    target="_blank" rel="noopener">Google Scholar profile</a>.
+                </p>
+            </div>
+
+            <div class="panel" id="contact">
+                <h2>Contact</h2>
+                <p>
+                    For academic enquiries and collaborations, please
+                    get in touch.
+                </p>
+                <p>
+                    Email: <em>Add your professional email address here.</em>
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        © <span id="year"></span> Dhananjay Tandel
+    </footer>
+
 </div>
-</header>
-
-<!-- Homepage -->
-
-<div class="hero">
-<div class="container">
-<div class="profile">
-
-  <div class="profile-info">
-    <h1>Dhananjay Tandel</h1>
-
-    <p class="position">Postdoctoral Researcher</p>
-    <p class="affiliation">University of Liège, Belgium</p>
-
-    <p class="research-line">
-      Research interests: Nonlinear Vibrations
-    </p>
-
-    <div class="buttons">
-      <a class="button primary"
-         href="Dhananjay_Tandel_CV.pdf"
-         target="_blank">
-        Curriculum Vitae
-      </a>
-
-      <a class="button secondary"
-         href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
-         target="_blank"
-         rel="noopener noreferrer">
-        Google Scholar
-      </a>
-    </div>
-  </div>
-
-  <img src="profile.jpg.jpg"
-       alt="Dhananjay Tandel"
-       class="profile-photo">
-
-</div>
-</div>
-</div>
-
-<!-- About -->
-
-<section id="about">
-<div class="container">
-  <h2>About Me</h2>
-  <div class="section-content">
-    <p>
-      I am a Postdoctoral Researcher working in the
-      field of nonlinear vibrations. My research
-      focuses on the dynamics and behaviour of
-      nonlinear systems.
-    </p>
-  </div>
-</div>
-</section>
-
-<!-- Research -->
-
-<section id="research">
-<div class="container">
-  <h2>Research Interests</h2>
-  <div class="section-content">
-    <p>
-      Nonlinear vibrations and nonlinear dynamical
-      systems.
-    </p>
-  </div>
-</div>
-</section>
-
-<!-- Publications -->
-
-<section id="publications">
-<div class="container">
-  <h2>Publications</h2>
-  <div class="section-content">
-    <p>
-      A complete list of my scientific publications
-      is available on Google Scholar.
-    </p>
-
-    <a class="publication-link"
-       href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
-       target="_blank"
-       rel="noopener noreferrer">
-      View publications →
-    </a>
-  </div>
-</div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <div class="section-content">
-      <p>Email: ddtandel112@gmail.com</p>
-    </div>
-  </div>
-</section>
-  
-<footer>
-  © <span id="year"></span> Dhananjay Tandel
-</footer>
 
 <script>
+const tabs = document.querySelectorAll(".tab");
+const panels = document.querySelectorAll(".panel");
+
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        const target = tab.dataset.tab;
+
+        tabs.forEach(item => item.classList.remove("active"));
+        panels.forEach(panel => panel.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(target).classList.add("active");
+    });
+});
+
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+    new Date().getFullYear();
 </script>
 
 </body>
