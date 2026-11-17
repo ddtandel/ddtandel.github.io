@@ -2,71 +2,529 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhananjay Tandel | Research</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 850px;
-            margin: 60px auto;
-            padding: 0 25px;
-            color: #263445;
-            line-height: 1.8;
-            background: #ffffff;
-        }
-        h1 { font-size: 38px; }
-        h2 { margin-top: 40px; color: #244b70; }
-        a { color: #286b9e; }
-        nav a { margin-right: 18px; }
-        footer {
-            margin-top: 60px;
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Academic website of Dhananjay Tandel, Postdoctoral Researcher at the University of Liège, Belgium, working on nonlinear vibrations.">
+
+  <meta name="author" content="Dhananjay Tandel">
+
+  <title>Dhananjay Tandel | Researcher in Nonlinear Vibrations</title>
+
+  <style>
+    :root {
+      --navy: #17324d;
+      --blue: #356b91;
+      --light: #f5f8fb;
+      --text: #344456;
+      --muted: #718096;
+      --border: #e3eaf0;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1050px, 90%);
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: bold;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Hero */
+
+    .hero {
+      background: var(--light);
+      padding: 90px 0 85px;
+    }
+
+    .hero-content {
+      max-width: 790px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(38px, 6vw, 58px);
+      line-height: 1.15;
+      margin: 18px 0;
+    }
+
+    .subtitle {
+      font-size: 21px;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .affiliation {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero-description {
+      margin-top: 25px;
+      max-width: 690px;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 21px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .primary {
+      color: white;
+      background: var(--navy);
+    }
+
+    .primary:hover {
+      background: var(--blue);
+      text-decoration: none;
+    }
+
+    .secondary {
+      border: 1px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .secondary:hover {
+      background: white;
+      text-decoration: none;
+    }
+
+    /* Main sections */
+
+    section {
+      padding: 72px 0;
+      scroll-margin-top: 75px;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--light);
+    }
+
+    .section-title {
+      font-size: 29px;
+      color: var(--navy);
+      margin-bottom: 25px;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      font-size: 16px;
+    }
+
+    /* Research cards */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .research-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .research-card h3 {
+      color: var(--navy);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .research-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Publications */
+
+    .publication-box {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: white;
+      margin: 20px 0;
+    }
+
+    .publication-box h3 {
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    /* Contact */
+
+    .contact-box {
+      background: var(--light);
+      padding: 28px;
+      border-radius: 8px;
+      margin-top: 25px;
+    }
+
+    .contact-box p {
+      margin: 8px 0;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #d9e3ec;
+      padding: 28px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <h1>Dhananjay Tandel</h1>
-    <p>Researcher </p>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">Dhananjay Tandel</a>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Welcome to my academic website.
-            I am a researcher interested in exploring
-            new ideas and contributing to scientific knowledge.
+  <!-- Homepage introduction -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <p class="eyebrow">Academic & Research Website</p>
+
+        <h1>Dhananjay Tandel</h1>
+
+        <p class="subtitle">
+          Postdoctoral Researcher
         </p>
-    </section>
 
-    <section id="research">
-        <h2>Research Interests</h2>
-        <p>More information about my research will appear here.</p>
-    </section>
+        <p class="affiliation">
+          University of Liège · Belgium
+        </p>
 
-    <section id="publications">
-        <h2>Publications</h2>
-        <a href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
-   target="_blank"> View my Google Scholar profile </a>
-    </section>
+        <p class="hero-description">
+          Welcome to my academic website. I am a Postdoctoral
+          Researcher at the University of Liège, Belgium,
+          working in the field of nonlinear vibrations.
+          This website presents my research interests,
+          academic contributions, and scientific publications.
+        </p>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: ddtandel112@gmail.com</p>
-    </section>
+        <div class="buttons">
+          <a class="button primary"
+             href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
+             target="_blank"
+             rel="noopener noreferrer">
+            Google Scholar ↗
+          </a>
 
-    <footer>
-        © 2026 DD Tandel | Personal Research Website
-    </footer>
+          <a class="button secondary" href="#research">
+            Explore my research
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
+
+      <div class="section-intro">
+        <p>
+          I am Dhananjay Tandel, a Postdoctoral Researcher
+          at the University of Liège, Belgium.
+        </p>
+
+        <p style="margin-top: 16px;">
+          My research focuses on nonlinear vibrations.
+          I am interested in understanding the behaviour
+          and dynamics of systems exhibiting nonlinear
+          vibrational phenomena.
+        </p>
+
+        <p style="margin-top: 16px;">
+          Through my research, I aim to contribute to
+          the development of knowledge in nonlinear
+          dynamical systems and vibration science.
+        </p>
+
+        <!-- Add your academic background here -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section id="research">
+    <div class="container">
+
+      <h2 class="section-title">Research Interests</h2>
+
+      <p class="section-intro">
+        My primary research area is nonlinear vibrations.
+        Further details of my specific research topics
+        and ongoing projects will be added here.
+      </p>
+
+      <div class="research-grid">
+
+        <div class="research-card">
+          <h3>Nonlinear Vibrations</h3>
+          <p>
+            Investigation of nonlinear vibrational
+            behaviour and the dynamics of mechanical systems.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Research Projects</h3>
+          <p>
+            Details of ongoing and completed research
+            projects will be presented here.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Scientific Contributions</h3>
+          <p>
+            Research findings, scientific publications,
+            and academic contributions.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <div class="container">
+
+      <h2 class="section-title">Publications</h2>
+
+      <p class="section-intro">
+        My scientific publications and research contributions
+        can be accessed through my Google Scholar profile.
+      </p>
+
+      <div class="publication-box">
+        <h3>Research Publications</h3>
+
+        <p>
+          For the complete and updated list of my journal
+          articles, conference papers, and citations,
+          please visit my Google Scholar profile.
+        </p>
+
+        <p style="margin-top: 15px;">
+          <a href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
+             target="_blank"
+             rel="noopener noreferrer">
+            View publications on Google Scholar →
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Academic affiliation -->
+  <section id="affiliation">
+    <div class="container">
+
+      <h2 class="section-title">Academic Affiliation</h2>
+
+      <p class="section-intro">
+        <strong>University of Liège</strong><br>
+        Belgium
+      </p>
+
+      <p style="margin-top: 15px;">
+        <a href="https://www.uliege.be/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit University of Liège →
+        </a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+
+      <h2 class="section-title">Contact</h2>
+
+      <p class="section-intro">
+        I welcome academic connections and discussions
+        related to nonlinear vibrations and research.
+      </p>
+
+      <div class="contact-box">
+
+        <p>
+          <strong>Name:</strong> Dhananjay Tandel
+        </p>
+
+        <p>
+          <strong>Position:</strong> Postdoctoral Researcher
+        </p>
+
+        <p>
+          <strong>Institution:</strong> University of Liège, Belgium
+        </p>
+
+        <p>
+          <strong>Google Scholar:</strong>
+          <a href="https://scholar.google.com/citations?hl=en&user=JMMW-RQAAAAJ"
+             target="_blank"
+             rel="noopener noreferrer">
+            Academic Profile
+          </a>
+        </p>
+
+        <!-- Add your professional email here -->
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year"></span> Dhananjay Tandel.
+        All rights reserved.
+      </p>
+
+      <p style="margin-top: 5px;">
+        Academic Website | University of Liège, Belgium
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
